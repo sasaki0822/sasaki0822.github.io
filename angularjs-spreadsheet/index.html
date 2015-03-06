@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>タイトル</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootswatch.min.css">
+    <link rel="stylesheet" href="./css/helper.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body ng-app="app" ng-controller="mainController">
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-2" aria-expanded="false">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="jsiContainer" class="container hidden">
+    <h1>Lumen</h1>
+    <p class="lead">Light and shadow</p>
+
+    <table class="timeline table table-striped">
+        <thead class="timeline-header">
+        <tr>
+            <td class="col-xs-1">A</td>
+            <td class="col-xs-5">B</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="schedule in schedules">
+            <td>{{schedule.time}}</td>
+            <td>{{schedule.action}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div>
+        <input ng-model="scheduleDataId" ng-init="scheduleDataId = '1UxDWEdo0k_DlNLZNkFz-F584OKWJlPpkq6YWSCtK94A';" name="scheduleDataId" type="text" value="">
+        <a ng-click="getCall()" href="javascript: void(0);" class="btn btn-primary">再取得</a>
+    </div>
+</div>
+
+<span ng-init="init();"></span>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
