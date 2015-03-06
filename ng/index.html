@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
-    <title>タイトル</title>
+    <title>第二回日本横断旅行　〜 あったかぃんだから熊本 〜</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootswatch.min.css">
     <link rel="stylesheet" href="./css/helper.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body ng-app="app" ng-controller="mainController">
+<body ng-app="app" ng-controller="mainController" ng-init="scheduleDataId = '1UxDWEdo0k_DlNLZNkFz-F584OKWJlPpkq6YWSCtK94A'; scheduleDataWSId = 'od6'">
 
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -24,7 +24,7 @@
         </div>
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-2" aria-expanded="false">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/{{scheduleDataId}}/" target="_blank">スプレッドシート</a></li>
                 <li><a href="#">Link</a></li>
             </ul>
         </div>
@@ -35,11 +35,17 @@
     <h1>Lumen</h1>
     <p class="lead">Light and shadow</p>
 
+    <div class="taC mb20">
+        <a ng-click="getCall('od6')" href="javascript: void(0);" class="btn btn-primary">03/07(土)</a>
+        <a ng-click="getCall('o86lskk')" href="javascript: void(0);" class="btn btn-primary">03/08(日)</a>
+        <a ng-click="getCall('oc4z1d5')" href="javascript: void(0);" class="btn btn-primary">03/09(月)</a>
+    </div>
+
     <table class="timeline table table-striped">
         <thead class="timeline-header">
         <tr>
-            <td class="col-xs-1">A</td>
-            <td class="col-xs-5">B</td>
+            <td class="col-xs-1">時間</td>
+            <td class="col-xs-5">行動</td>
         </tr>
         </thead>
         <tbody>
@@ -50,12 +56,27 @@
         </tbody>
     </table>
 
+    <hr>
 
-    <div>
-        <input ng-model="scheduleDataId" ng-init="scheduleDataId = '1UxDWEdo0k_DlNLZNkFz-F584OKWJlPpkq6YWSCtK94A';" name="scheduleDataId" type="text" value="">
-        <a ng-click="getCall()" href="javascript: void(0);" class="btn btn-primary">再取得</a>
-    </div>
+    <table class="timeline table table-striped">
+        <thead class="timeline-header">
+        <tr>
+            <td class="col-xs-2">備考</td>
+            <td class="col-xs-4">URL</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="schedule in schedules">
+            <td>{{schedule.time}}</td>
+            <td>{{schedule.action}}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
+
+<footer class="container-fluid">
+    <small>Copyright (C) 2013-2014 9ineBB All Rights Reserved.</small>
+</footer>
 
 <span ng-init="init();"></span>
 

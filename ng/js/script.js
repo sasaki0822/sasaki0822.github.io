@@ -4,10 +4,26 @@
 
     angular.module('app', []).controller('mainController', function ($scope, $http) {
 
-        var renderSchedule = function (data) {
-            var schedules = [], cell, row;
+        $scope.init = function() {
+            $scope.getCall();
+        };
 
-            for (var i = 0; i < data.feed.entry.length; i++) {
+        $scope.getCall = function (wsId) {
+            var _wsId = wsId || 'od6';
+            $scope.schedules = [];
+            $http.get(
+                scheduleBaseUrl + $scope.scheduleDataId + '/' + _wsId + '/public/values?alt=json', {}
+            ).success(renderSchedule).error(function () {
+                alert('通信エラー');
+            });
+        };
+
+        var renderSchedule = function (data) {
+            var schedules = [], cell, row, len = 0;
+
+            if (data.feed.entry) { len =  data.feed.entry.length; }
+
+            for (var i = 0; i < len; i++) {
                 cell = data.feed.entry[i];
                 row = cell.gs$cell.row - 1;
 
@@ -23,19 +39,6 @@
             $scope.schedules = schedules;
 
             $('#jsiContainer').removeClass('hidden');
-        };
-
-        $scope.init = function() {
-            $scope.getCall();
-        };
-
-        $scope.getCall = function () {
-            $scope.schedules = [];
-            $http.get(
-                scheduleBaseUrl + $scope.scheduleDataId + '/od6/public/values?alt=json', {}
-            ).success(renderSchedule).error(function () {
-                alert('通信エラー')
-            });
         };
 
     });
