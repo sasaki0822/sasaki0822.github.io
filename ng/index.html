@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/helper.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body ng-app="app" ng-controller="mainController" ng-init="scheduleDataId = '1UxDWEdo0k_DlNLZNkFz-F584OKWJlPpkq6YWSCtK94A'; scheduleDataWSId = 'od6'">
+<body ng-app="app" ng-controller="mainController" ng-init="scheduleDataId = '1UxDWEdo0k_DlNLZNkFz-F584OKWJlPpkq6YWSCtK94A'; scheduleDataWSId = 'od6'; memoDataWSId= 'o9imuow';">
 
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -32,13 +32,11 @@
 </div>
 
 <div id="jsiContainer" class="container hidden">
-    <h1>Lumen</h1>
-    <p class="lead">Light and shadow</p>
+    <h1>第2回日本横断旅行</h1>
+    <p class="lead">あったかぃんだから熊本</p>
 
     <div class="taC mb20">
-        <a ng-click="getCall('od6')" href="javascript: void(0);" class="btn btn-primary">03/07(土)</a>
-        <a ng-click="getCall('o86lskk')" href="javascript: void(0);" class="btn btn-primary">03/08(日)</a>
-        <a ng-click="getCall('oc4z1d5')" href="javascript: void(0);" class="btn btn-primary">03/09(月)</a>
+        <a ng-click="getCall('od6')" href="javascript: void(0);" class="btn btn-primary">03/07(土)</a>&nbsp;&nbsp;<a ng-click="getCall('o86lskk')" href="javascript: void(0);" class="btn btn-primary">03/08(日)</a>&nbsp;&nbsp;<a ng-click="getCall('oc4z1d5')" href="javascript: void(0);" class="btn btn-primary">03/09(月)</a>
     </div>
 
     <table class="timeline table table-striped">
@@ -58,20 +56,20 @@
 
     <hr>
 
-    <table class="timeline table table-striped">
-        <thead class="timeline-header">
-        <tr>
-            <td class="col-xs-2">備考</td>
-            <td class="col-xs-4">URL</td>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="schedule in schedules">
-            <td>{{schedule.time}}</td>
-            <td>{{schedule.action}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <!--<table class="timeline table table-striped">-->
+        <!--<thead class="timeline-header">-->
+        <!--<tr>-->
+            <!--<td class="col-xs-2">備考</td>-->
+            <!--<td class="col-xs-4">URL</td>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="schedule in schedules">-->
+            <!--<td>{{schedule.time}}</td>-->
+            <!--<td>{{schedule.action}}</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
 </div>
 
 <footer class="container-fluid">
