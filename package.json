@@ -1,0 +1,28 @@
+{
+  "name": "ikworks",
+  "version": "0.0.1",
+  "description": "make all dev tasks for ikworks",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "(none)"
+  },
+  "keywords": [
+    "(none)"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+      "grunt": "*",
+      "grunt-contrib-jshint": "*"
+  },
+  "devDependencies": {
+  },
+  "otherDependencies": {
+    "grunt-cli": "npm install -g grunt-cli"
+  },
+  "author": "Tatsuya Sasaki",
+  "license": "(none)"
+}

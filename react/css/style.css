@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+body {
+    margin-bottom: 60px;
+}
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.timeline-header  {
+    color: #333;
+    background: #eee;
+    border-bottom: 2px solid #ddd;
+}
